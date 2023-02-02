@@ -1,3 +1,4 @@
+import "./App.css";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -8,33 +9,32 @@ function App() {
     console.log(price);
   }, [price]);
 
-  const inputJax = (
-    <div>
-      <div>
-        <label for="name">Name : </label>
-        <input
-          type="text"
-          placeholder="type"
-          onChange={(event) => {
-            setName(event.target.value);
-          }}
-        ></input>
-      </div>
-      <div>
-        <label for="price">Price : </label>
-        <input
-          type="text"
-          onChange={(priceEvent) => {
-            setPrice(priceEvent.target.value);
-          }}
-        ></input>
-      </div>
-    </div>
-  );
-
   return (
     <div className="app">
-      {inputJax}
+      <div>
+        <div>
+          <label for="name">Name :</label>
+          <br />
+          <input
+            type="text"
+            placeholder="type"
+            onChange={(event) => {
+              setName(event.target.value);
+            }}
+          ></input>
+        </div>
+        <br />
+        <div>
+          <label for="price">Price : </label>
+          <br />
+          <input
+            type="text"
+            onChange={(priceEvent) => {
+              setPrice(priceEvent.target.value);
+            }}
+          ></input>
+        </div>
+      </div>
       {/* <div>{count}</div>
       <div>
         <button
