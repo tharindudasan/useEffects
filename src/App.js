@@ -1,25 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
 
 function App() {
+  const [name, setName] = useState();
+  const [price, setPrice] = useState();
+  useEffect(() => {
+    console.log(name);
+    console.log(price);
+  }, [price]);
+
+  const inputJax = (
+    <div>
+      <div>
+        <label for="name">Name : </label>
+        <input
+          type="text"
+          placeholder="type"
+          onChange={(event) => {
+            setName(event.target.value);
+          }}
+        ></input>
+      </div>
+      <div>
+        <label for="price">Price : </label>
+        <input
+          type="text"
+          onChange={(priceEvent) => {
+            setPrice(priceEvent.target.value);
+          }}
+        ></input>
+      </div>
+    </div>
+  );
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className="app">
+      {inputJax}
+      {/* <div>{count}</div>
+      <div>
+        <button
+          onClick={() => {
+            setCount(count + 1);
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          Click
+        </button>
+      </div> */}
     </div>
   );
 }
-
 export default App;
